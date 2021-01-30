@@ -1,5 +1,5 @@
 ## Exploratory Data Analysis Course Project 1
-# Plot 1
+# Plot 2
 # @dillonchewwx, 30012021
 
 # Load Data
@@ -15,12 +15,8 @@ cleaneddata<-data %>%
   select(2:9) %>%
   mutate(across(where(is.character), as.numeric))
 
-# Base plot here
-png("plot1.png")
-hist(cleaneddata$Global_active_power, 
-     main="Global Active Power",
-     xlab="Global Active Power (kilowatts)", 
-     col="red"
-)
+# Base Plot Here
+png("plot2.png")
+plot(cleaneddata$Time, cleaneddata$Global_active_power, type="n", xlab="", ylab="Global Active Power (kilowatts)")
+lines(cleaneddata$Time, cleaneddata$Global_active_power)
 dev.off()
-
